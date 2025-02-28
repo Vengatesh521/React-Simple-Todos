@@ -1,0 +1,21 @@
+/* Write your CSS here */
+.bg {
+    width: 80%;
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+}
+
+p {
+  color: black;
+  padding: 5px;
+}
+button {
+  padding: 5px;
+  background-color: white;
+  border-color: red;
+  color: red;
+  border-radius: 5;
+  height: 40px;
+  width: 150px;
+}
