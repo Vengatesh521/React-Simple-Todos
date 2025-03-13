@@ -32,7 +32,6 @@ class SimpleTodos extends Component {
     const {newTodoTitle, newTodoCount} = this.state
     if (!newTodoTitle.trim()) return
 
-    // Extract number from end of title if present
     const match = newTodoTitle.match(/(\d+)$/)
     let title = newTodoTitle
     let count = Number(newTodoCount) || 1
@@ -65,6 +64,14 @@ class SimpleTodos extends Component {
     this.setState(prevState => ({
       todosList: prevState.todosList.map(todo =>
         todo.id === id ? {...todo, completed: !todo.completed} : todo,
+      ),
+    }))
+  }
+
+  updateTodo = (id, newTitle) => {
+    this.setState(prevState => ({
+      todosList: prevState.todosList.map(todo =>
+        todo.id === id ? {...todo, title: newTitle} : todo,
       ),
     }))
   }
@@ -108,6 +115,7 @@ class SimpleTodos extends Component {
                 todoDetails={todo}
                 deleteTodo={this.deleteTodo}
                 toggleComplete={this.toggleComplete}
+                updateTodo={this.updateTodo}
               />
             ))}
           </ul>

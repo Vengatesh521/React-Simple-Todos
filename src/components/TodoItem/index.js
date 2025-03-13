@@ -4,7 +4,7 @@ import './index.css'
 class TodoItem extends Component {
   state = {
     editing: false,
-    updatedTitle: '', // Fixed typo: removed comma
+    updatedTitle: '',
   }
 
   handleEdit = () => {
@@ -13,30 +13,39 @@ class TodoItem extends Component {
   }
 
   handleSave = () => {
+    const {todoDetails, updateTodo} = this.props
+    const {updatedTitle} = this.state
+
+    if (updatedTitle.trim()) {
+      updateTodo(todoDetails.id, updatedTitle)
+    }
     this.setState({editing: false})
   }
 
   handleChange = e => {
-    // Fixed syntax: added parentheses
     this.setState({updatedTitle: e.target.value})
   }
 
   render() {
     const {todoDetails, deleteTodo, toggleComplete} = this.props
     const {editing, updatedTitle} = this.state
+    const {id, title, completed} = todoDetails
 
     return (
-      <li
-        className={todoDetails.completed ? 'todo-item completed' : 'todo-item'}
-      >
+      <li className={completed ? 'todo-item completed' : 'todo-item'}>
         {editing ? (
           <>
             <input
               type="text"
               value={updatedTitle}
-              onChange={this.handleChange} // Fixed typo: was 'onchange'
+              onChange={this.handleChange}
+              className="edit-input"
             />
-            <button onClick={this.handleSave} type="button">
+            <button
+              onClick={this.handleSave}
+              type="button"
+              className="save-btn"
+            >
               Save
             </button>
           </>
@@ -44,16 +53,21 @@ class TodoItem extends Component {
           <>
             <input
               type="checkbox"
-              checked={todoDetails.completed} // Fixed typo: was 'tododetails'
-              onChange={() => toggleComplete(todoDetails.id)}
+              checked={completed}
+              onChange={() => toggleComplete(id)}
             />
-            <p className="title">{todoDetails.title}</p>
-            <button onClick={this.handleEdit} type="button">
+            <p className="title">{title}</p>
+            <button
+              onClick={this.handleEdit}
+              type="button"
+              className="edit-btn"
+            >
               Edit
             </button>
             <button
-              onClick={() => deleteTodo(todoDetails.id)} // Fixed typo: was 'onclick'
+              onClick={() => deleteTodo(id)}
               type="button"
+              className="delete-btn"
             >
               Delete
             </button>
