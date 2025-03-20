@@ -1,14 +1,26 @@
-import './index.css'
 import {Component} from 'react'
+import {DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd'
 import TodoItem from '../TodoItem'
+import './index.css'
 
 const initialTodosList = [
-  {id: 1, title: 'Book the ticket for today evening', completed: false},
-  {id: 2, title: 'Rent the movie for tomorrow movie night', completed: false},
+  {
+    id: 1,
+    title: 'Book the ticket for today evening',
+    completed: false,
+    dueDate: '',
+  },
+  {
+    id: 2,
+    title: 'Rent the movie for tomorrow movie night',
+    completed: false,
+    dueDate: '',
+  },
   {
     id: 3,
     title: 'Confirm the slot for the yoga session tomorrow morning',
     completed: false,
+    dueDate: '',
   },
   {id: 4, title: 'Drop the parcel at Bloomingdale', completed: false},
   {id: 5, title: 'Order fruits on Big Basket', completed: false},
@@ -32,18 +44,10 @@ class SimpleTodos extends Component {
     const {newTodoTitle, newTodoCount} = this.state
     if (!newTodoTitle.trim()) return
 
-    const match = newTodoTitle.match(/(\d+)$/)
-    let title = newTodoTitle
-    let count = Number(newTodoCount) || 1
-
-    if (match) {
-      count = Number(match[1])
-      title = newTodoTitle.slice(0, match.index).trim()
-    }
-
+    const count = Number(newTodoCount) || 1
     const newTodos = Array.from({length: count}, (_, i) => ({
       id: Date.now() + i,
-      title,
+      title: newTodoTitle,
       completed: false,
     }))
 
@@ -68,16 +72,21 @@ class SimpleTodos extends Component {
     }))
   }
 
-  updateTodo = (id, newTitle) => {
-    this.setState(prevState => ({
-      todosList: prevState.todosList.map(todo =>
-        todo.id === id ? {...todo, title: newTitle} : todo,
-      ),
-    }))
+  handleDragEnd = result => {
+    if (!result.destination) return
+
+    this.setState(prevState => {
+      const reorderedTodos = [...prevState.todosList]
+      const [movedItem] = reorderedTodos.splice(result.source.index, 1)
+      reorderedTodos.splice(result.destination.index, 0, movedItem)
+
+      return {todosList: reorderedTodos}
+    })
   }
 
   render() {
     const {todosList, newTodoTitle, newTodoCount} = this.state
+
     return (
       <div className="container">
         <div className="inner-container">
@@ -88,7 +97,7 @@ class SimpleTodos extends Component {
               name="newTodoTitle"
               value={newTodoTitle}
               onChange={this.handleChange}
-              placeholder="Enter todo title (e.g., 'Buy groceries 3')"
+              placeholder="Enter todo title"
               className="input-title"
             />
             <input
@@ -96,7 +105,6 @@ class SimpleTodos extends Component {
               name="newTodoCount"
               value={newTodoCount}
               onChange={this.handleChange}
-              placeholder="Count"
               min="1"
               className="input-count"
             />
@@ -108,17 +116,41 @@ class SimpleTodos extends Component {
               Add
             </button>
           </div>
-          <ul className="todos-list">
-            {todosList.map(todo => (
-              <TodoItem
-                key={todo.id}
-                todoDetails={todo}
-                deleteTodo={this.deleteTodo}
-                toggleComplete={this.toggleComplete}
-                updateTodo={this.updateTodo}
-              />
-            ))}
-          </ul>
+
+          <DragDropContext onDragEnd={this.handleDragEnd}>
+            <Droppable droppableId="todoList">
+              {droppableProvided => (
+                <ul
+                  {...droppableProvided.droppableProps}
+                  ref={droppableProvided.innerRef}
+                  className="todos-list"
+                >
+                  {todosList.map((todo, index) => (
+                    <Draggable
+                      key={todo.id}
+                      draggableId={todo.id.toString()}
+                      index={index}
+                    >
+                      {draggableProvided => (
+                        <li
+                          ref={draggableProvided.innerRef}
+                          {...draggableProvided.draggableProps}
+                          {...draggableProvided.dragHandleProps}
+                        >
+                          <TodoItem
+                            todoDetails={todo}
+                            deleteTodo={this.deleteTodo}
+                            toggleComplete={this.toggleComplete}
+                          />
+                        </li>
+                      )}
+                    </Draggable>
+                  ))}
+                  {droppableProvided.placeholder}
+                </ul>
+              )}
+            </Droppable>
+          </DragDropContext>
         </div>
       </div>
     )

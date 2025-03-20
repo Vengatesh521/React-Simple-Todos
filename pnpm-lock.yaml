@@ -3,8 +3,11 @@ dependencies:
   '@testing-library/react': 11.2.5_react-dom@17.0.1+react@17.0.1
   '@testing-library/user-event': 12.6.2
   chalk: 4.1.0
+  npm: 11.2.0
   react: 17.0.1
+  react-beautiful-dnd: 13.1.1_react-dom@17.0.1+react@17.0.1
   react-dom: 17.0.1_react@17.0.1
+  start: 5.1.0
 devDependencies:
   eslint-config-airbnb: 18.2.1
   eslint-config-prettier: 8.1.0
@@ -2585,6 +2588,14 @@ packages:
       node: '>=6.9.0'
     resolution:
       integrity: sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==
+  /@babel/runtime/7.26.10:
+    dependencies:
+      regenerator-runtime: 0.14.1
+    dev: false
+    engines:
+      node: '>=6.9.0'
+    resolution:
+      integrity: sha512-2WJMeRQPHKSPemqk/awGrAiuFfzBmOIPXKizAsVhWH9YJqLZ0H+HS4c8loHGgW6utJ3E/ejXQUsiGaQy2NZ9Fw==
   /@babel/template/7.25.9:
     dependencies:
       '@babel/code-frame': 7.26.2
@@ -3363,6 +3374,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-olP3sd1qOEe5dXTSaFvQG+02VdRXcdytWLAZsAq1PecU8uqQAhkrnbli7DagjtXKW/Bl7YJbUsa8MPcuc8LHEQ==
+  /@types/hoist-non-react-statics/3.3.6:
+    dependencies:
+      '@types/react': 19.0.12
+      hoist-non-react-statics: 3.3.2
+    dev: false
+    resolution:
+      integrity: sha512-lPByRJUer/iN/xa4qpyL0qmL11DqNW81iU/IG1S3uvRUq4oKagz8VCxZjiWkumgt66YT3vOdDgZ0o32sGKtCEw==
   /@types/html-minifier-terser/5.1.2:
     dev: true
     resolution:
@@ -3420,6 +3438,21 @@ packages:
     dev: true
     resolution:
       integrity: sha512-hroOstUScF6zhIi+5+x0dzqrHA1EJi+Irri6b1fxolMTqqHIV/Cg77EtnQcZqZCu8hR3mX2BzIxN4/GzI68Kfw==
+  /@types/react-redux/7.1.34:
+    dependencies:
+      '@types/hoist-non-react-statics': 3.3.6
+      '@types/react': 19.0.12
+      hoist-non-react-statics: 3.3.2
+      redux: 4.2.1
+    dev: false
+    resolution:
+      integrity: sha512-GdFaVjEbYv4Fthm2ZLvj1VSCedV7TqE5y1kNwnjSdBOTXuRSgowux6J8TAct15T3CKBr63UMk+2CO7ilRhyrAQ==
+  /@types/react/19.0.12:
+    dependencies:
+      csstype: 3.1.3
+    dev: false
+    resolution:
+      integrity: sha512-V6Ar115dBDrjbtXSrS+/Oruobc+qVbbUxDFC1RSbRqLt5SYvxxyIDrSC85RWml54g+jfNeEMZhEj7wW07ONQhA==
   /@types/resolve/0.0.8:
     dependencies:
       '@types/node': 22.9.0
@@ -5531,6 +5564,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-LHz35Hr83dnFeipc7oqFDmsjHdljj3TQtxGGiNWSOsTLIAubSm4TEz8qCaKFpk7idaQ1GfWscF4E6mgpBysA1w==
+  /css-box-model/1.2.1:
+    dependencies:
+      tiny-invariant: 1.3.3
+    dev: false
+    resolution:
+      integrity: sha512-a7Vr4Q/kd/aw96bnJG332W9V9LkJO69JRcaCYDUqjp6/z0w6VcZjgAcTbgFxEPfBgdnAwlh3iwu+hLopa+flJw==
   /css-color-names/0.0.4:
     dev: true
     resolution:
@@ -5775,6 +5814,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-AZL67abkUzIuvcHqk7c09cezpGNcxUxU4Ioi/05xHk4DQeTkWmGYftIE6ctU6AEt+Gn4n1lDStOtj7FKycP71A==
+  /csstype/3.1.3:
+    dev: false
+    resolution:
+      integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==
   /cyclist/1.0.2:
     dev: true
     resolution:
@@ -7854,6 +7897,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Tti3gMqLdZfhOQY1Mzf/AanLiqh1WTiJgEj26ZuYQ9fbkLomzGchCws4FyrSd4VkpBfiNhaE1On+lOz894jvXg==
+  /hoist-non-react-statics/3.3.2:
+    dependencies:
+      react-is: 16.13.1
+    dev: false
+    resolution:
+      integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
   /hoopy/0.1.4:
     dev: true
     engines:
@@ -9843,6 +9892,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==
+  /memoize-one/5.2.1:
+    dev: false
+    resolution:
+      integrity: sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==
   /memory-fs/0.4.1:
     dependencies:
       errno: 0.1.8
@@ -10336,6 +10389,80 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==
+  /npm/11.2.0:
+    bundledDependencies:
+      - '@isaacs/string-locale-compare'
+      - '@npmcli/arborist'
+      - '@npmcli/config'
+      - '@npmcli/fs'
+      - '@npmcli/map-workspaces'
+      - '@npmcli/package-json'
+      - '@npmcli/promise-spawn'
+      - '@npmcli/redact'
+      - '@npmcli/run-script'
+      - '@sigstore/tuf'
+      - abbrev
+      - archy
+      - cacache
+      - chalk
+      - ci-info
+      - cli-columns
+      - fastest-levenshtein
+      - fs-minipass
+      - glob
+      - graceful-fs
+      - hosted-git-info
+      - ini
+      - init-package-json
+      - is-cidr
+      - json-parse-even-better-errors
+      - libnpmaccess
+      - libnpmdiff
+      - libnpmexec
+      - libnpmfund
+      - libnpmorg
+      - libnpmpack
+      - libnpmpublish
+      - libnpmsearch
+      - libnpmteam
+      - libnpmversion
+      - make-fetch-happen
+      - minimatch
+      - minipass
+      - minipass-pipeline
+      - ms
+      - node-gyp
+      - nopt
+      - normalize-package-data
+      - npm-audit-report
+      - npm-install-checks
+      - npm-package-arg
+      - npm-pick-manifest
+      - npm-profile
+      - npm-registry-fetch
+      - npm-user-validate
+      - p-map
+      - pacote
+      - parse-conflict-json
+      - proc-log
+      - qrcode-terminal
+      - read
+      - semver
+      - spdx-expression-parse
+      - ssri
+      - supports-color
+      - tar
+      - text-table
+      - tiny-relative-date
+      - treeverse
+      - validate-npm-package-name
+      - which
+    dev: false
+    engines:
+      node: ^20.17.0 || >=22.9.0
+    hasBin: true
+    resolution:
+      integrity: sha512-PcnFC6gTo9VDkxVaQ1/mZAS3JoWrDjAI+a6e2NgfYQSGDwftJlbdV0jBMi2V8xQPqbGcWaa7p3UP0SKF+Bhm2g==
   /nth-check/1.0.2:
     dependencies:
       boolbase: 1.0.0
@@ -11763,7 +11890,6 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
-    dev: true
     resolution:
       integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
   /proxy-addr/2.0.7:
@@ -11877,6 +12003,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
+  /raf-schd/4.0.3:
+    dev: false
+    resolution:
+      integrity: sha512-tQkJl2GRWh83ui2DiPTJz9wEiMN20syf+5oKfB03yYP7ioZcJwsIK8FjrtLwH1m7C7e+Tt2yYBlrOpdT+dyeIQ==
   /raf/3.4.1:
     dependencies:
       performance-now: 2.1.0
@@ -11926,6 +12056,24 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-0sF4ny9v/B7s6aoehwze9vJNWcmCemAUYBVasscVr92+UYiEqDXOxfKjXN685mDaMRNF3WdhHQs76oTODMocFA==
+  /react-beautiful-dnd/13.1.1_react-dom@17.0.1+react@17.0.1:
+    dependencies:
+      '@babel/runtime': 7.26.10
+      css-box-model: 1.2.1
+      memoize-one: 5.2.1
+      raf-schd: 4.0.3
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
+      react-redux: 7.2.9_react-dom@17.0.1+react@17.0.1
+      redux: 4.2.1
+      use-memo-one: 1.1.3_react@17.0.1
+    deprecated: 'react-beautiful-dnd is now deprecated. Context and options: https://github.com/atlassian/react-beautiful-dnd/issues/2672'
+    dev: false
+    peerDependencies:
+      react: ^16.8.5 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.5 || ^17.0.0 || ^18.0.0
+    resolution:
+      integrity: sha512-0Lvs4tq2VcrEjEgDXHjT98r+63drkKEgqyxdA7qD3mvKwga6a5SscbdLPO2IExotU1jW8L0Ksdl0Cj2AF67nPQ==
   /react-dev-utils/11.0.4:
     dependencies:
       '@babel/code-frame': 7.10.4
@@ -11973,7 +12121,6 @@ packages:
     resolution:
       integrity: sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
   /react-is/16.13.1:
-    dev: true
     resolution:
       integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
   /react-is/17.0.2:
@@ -11983,6 +12130,28 @@ packages:
     dev: false
     resolution:
       integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==
+  /react-redux/7.2.9_react-dom@17.0.1+react@17.0.1:
+    dependencies:
+      '@babel/runtime': 7.26.10
+      '@types/react-redux': 7.1.34
+      hoist-non-react-statics: 3.3.2
+      loose-envify: 1.4.0
+      prop-types: 15.8.1
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
+      react-is: 17.0.2
+    dev: false
+    peerDependencies:
+      react: ^16.8.3 || ^17 || ^18
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    resolution:
+      integrity: sha512-Gx4L3uM182jEEayZfRbI/G11ZpYdNAnBs70lFVMNdHJI76XYtR+7m0MN+eAs7UHBPhWXcnFPaS+9owSCJQHNpQ==
   /react-refresh/0.8.3:
     dev: true
     engines:
@@ -12162,6 +12331,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-6tDA8g98We0zd0GvVeMT9arEOnTw9qM03L9cJXaCjrip1OO764RDBLBfrB4cwzNGDj5OA5ioymC9GkizgWJDUg==
+  /redux/4.2.1:
+    dependencies:
+      '@babel/runtime': 7.26.10
+    dev: false
+    resolution:
+      integrity: sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==
   /reflect.getprototypeof/1.0.6:
     dependencies:
       call-bind: 1.0.7
@@ -13133,6 +13308,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-oeVtt7eWQS+Na6F//S4kJ2K2VbRlS9D43mAlMyVpVWovy9o+jfgH8O9agzANzaiLjclA0oYzUXEM4PurhSUChw==
+  /start/5.1.0:
+    deprecated: Deprecated in favor of https://github.com/deepsweet/start
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-lirwWQmvBC65bnxU3HzKx5m7vfZJZTx/FrKyPWbtobcvujGbinQQRrNodtcgkp4mTZ00umzDeg7lraN351l0aA==
   /static-eval/2.0.2:
     dependencies:
       escodegen: 1.14.3
@@ -13670,6 +13852,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-qsdtZH+vMoCARQtyod4imc2nIJwg9Cc7lPRrw9CzF8ZKR0khdr8+2nX80PBhET3tcyTtJDxAffGh2rXH4tyU8A==
+  /tiny-invariant/1.3.3:
+    dev: false
+    resolution:
+      integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==
   /tmpl/1.0.5:
     dev: true
     resolution:
@@ -14088,6 +14274,14 @@ packages:
       node: '>= 0.4'
     resolution:
       integrity: sha512-oCwdVC7mTuWiPyjLUz/COz5TLk6wgp0RCsN+wHZ2Ekneac9w8uuV0njcbbie2ME+Vs+d6duwmYuR3HgQXs1fOg==
+  /use-memo-one/1.1.3_react@17.0.1:
+    dependencies:
+      react: 17.0.1
+    dev: false
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    resolution:
+      integrity: sha512-g66/K7ZQGYrI6dy8GLpVcMsBp4s17xNkYJVSMvTEevGy3nDxHOfE6z8BVE22+5G5x7t3+bhzrlTDB7ObrEE0cQ==
   /use/3.1.1:
     dev: true
     engines:
@@ -14811,8 +15005,11 @@ specifiers:
   eslint-plugin-prettier: 3.3.1
   husky: 4.3.8
   lint-staged: 10.5.4
+  npm: 11.2.0
   npm-run-all: 4.1.5
   prettier: 2.2.1
   react: 17.0.1
+  react-beautiful-dnd: 13.1.1
   react-dom: 17.0.1
   react-scripts: 4.0.3
+  start: 5.1.0
